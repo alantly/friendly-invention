@@ -8,15 +8,11 @@ class Node(object):
             return self.data
         return self.data + self.next.printData()
 
-    def size(self):
-        if self.next is None:
-            return 1
-        return 1 + self.next.size()
-
 class Queue(object):
     def __init__(self):
         self.head = None
         self.tail = None
+        self.currentSize = 0
 
     def printData(self):
         if self.head is None:
@@ -24,9 +20,7 @@ class Queue(object):
         return self.head.printData()
 
     def size(self):
-        if self.head is None:
-            return 0
-        return self.head.size()
+        return self.currentSize
 
     def peek(self):
         if self.head is None:
@@ -36,6 +30,7 @@ class Queue(object):
     def enqueue(self, data):
         if data is None:
             return self
+        self.currentSize += 1
         newTail = Node(data)
         if self.head is None:
             self.head = self.tail = newTail
@@ -47,7 +42,7 @@ class Queue(object):
     def dequeue(self):
         if self.head is None:
             return None
-
+        self.currentSize -= 1
         dequeuedNode = self.head
         self.head = self.head.next
         return dequeuedNode.data

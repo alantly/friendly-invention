@@ -8,14 +8,10 @@ class Node(object):
             return self.data
         return self.data + self.next.printData()
 
-    def size(self):
-        if self.next is None:
-            return 1
-        return 1 + self.next.size()
-
 class Stack(object):
     def __init__(self):
         self.head = None
+        self.currentSize = 0
 
     def printData(self):
         if self.head is None:
@@ -23,9 +19,7 @@ class Stack(object):
         return self.head.printData()
 
     def size(self):
-        if self.head is None:
-            return 0
-        return self.head.size()
+        return self.currentSize
 
     def peek(self):
         if self.head is None:
@@ -35,6 +29,7 @@ class Stack(object):
     def push(self, data):
         if data is None:
             return self
+        self.currentSize += 1
         newHead = Node(data)
         newHead.next = self.head
         self.head = newHead
@@ -43,6 +38,7 @@ class Stack(object):
     def pop(self):
         if self.head is None:
             return None
+        self.currentSize -= 1
         poppedNode = self.head
         self.head = self.head.next
         return poppedNode.data
