@@ -1,6 +1,11 @@
 from node import Node
 
 class Stack(object):
+    """
+    Stack - O(n)
+    Property: LIFO (Last in First out)
+    Useful for keeping the most recent item
+    """
     def __init__(self):
         self.head = None
         self.currentSize = 0

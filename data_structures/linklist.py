@@ -1,6 +1,18 @@
 from node import Node
 
 class LinkList(object):
+    """
+    Link List/Array - O(n)
+    General list of values
+    - Check for null and update accordingly
+    - Slow faster runner technique
+    - theta(n) to march down list
+    - doubly linked list contains prev and next
+
+    Vectors/ArrayLists
+    - dynamically resizing array provide O(1) access time
+    - double size when hit limit - O(n) time
+    """
     def __init__(self):
         self.head = None
         self.currentSize = 0

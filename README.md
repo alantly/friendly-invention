@@ -1,11 +1,6 @@
 Tools
-Link List/Array - general list of values - O(n)
-Stack - useful for keeping the most recent item - O(n)
-Queue - useful for keeping a line of items/oldest item - O(n)
-Heap - useful for min/max removes - O(log n)
 Binary Search Tree - good for storing numbered values in order - O(log n)
 Hash Table/Hash Set - good for constant access and unique values - O(1)
-Recursion - idea is to keep and edit original state as function input and return result at bottom. (Good for string manip and Binary Trees)
 
 5 Algorithm Approaches
 Examplify - build small examples to see problem
@@ -19,60 +14,15 @@ For lists of values
   Binary Search - O(log n)
   Quick Sort - O(n log n)
   Merge Sort - O(n log n)
-Binary Trees
-  Preorder - O(|V|)
-  Inorder - O(|V|)
-  Postorder - O(|V|)
 For Graphs
   DFS - Recursive/Iterative O(|V| + |E|)
   BFS  - Iterative O(|V| + |E|)
 
-Data Structures
-Linked List
--check for null and update accordingly
--slow faster runner technique
--theta(n) to march down list
--doubly linked list contains prev and next
-
-index T(n)
-insert/delete at beg T(1)
-insert/delete at end T(n) or T(1)
-insert/delete at middle T(1) + search time
-Wasted space average T(n)
-
 Binary Tree
--Binary Tree (tree of 2 elements) vs. Binary Search Tree (left <= root < right)
-class Tree {
-  int entry;
-  Node left_child = null;
-  Node right_child = null;
-  public Tree(int e, Node l = null, Node r = null) {
-    entry = e;
-    left_child = l;
-    right_child = r;
-  }
-}
--Recursion based traversal, dont think about dfs or bfs, like in 61a. just pre,in, and post
--balanced vs unbalanced (describe in avg and worst case)
 -Full (every node has k children) and Complete (all children at the kth or k-1th level). Both is rare with (2^n) -1 nodes
 -red-black
 -avl
 
--Pre-order traversal = visit every node BEFORE its children (regular left to right dfs traversal)
-void preorder(Node root) {
-  if (root == NULL) return;
-  visit(root);
-  preorder(root->left());
-  preorder(root->right());
-}
--in-order = visit left leaf then node then right leaf. goes to the bottom first.
-go left
-visit root
-go right
--post-order = visit node AFTER its children (used to delete children then node)
-go left
-go right
-visit root
 -Tree Balancing: Need runtime and idea of how they work
 Red-Black Tree - O(log n)
 AVL Trees - O(log n)
@@ -86,20 +36,7 @@ Graphs
 -Traverse using BFS/DFS
 -Dijkstra's for distances, shortest path
 -Prims algorithm, min spanning tree
-
-Vectors/ArrayLists
--dynamically resizing array provide O(1) access time
--double size when hit limit, O(n) time
-
-Hash Table
--always use this as a set
--fast lookup in an array, hash function maps key to array index
--keys need to be unique, large table.
--can use BST for O(logn) lookup or linklist for O(n)
-Space   O(n)   O(n)
-Search   O(1)   O(n)
-Insert   O(1)   O(n)
-Delete   O(1)   O(n)
+-loop in graph
 
 Algorithms
 Breath First Search - O(|V| + |E|)

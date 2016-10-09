@@ -1,6 +1,11 @@
 from node import Node
 
 class Queue(object):
+    """
+    Queue O(n)
+    Property: FIFO (First in First out)
+    Useful for keeping a line of items/oldest item
+    """
     def __init__(self):
         self.head = None
         self.tail = None

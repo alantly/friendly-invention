@@ -1,7 +1,8 @@
 class Heap(object):
     """
-    Min Binary Heap Implementation
-    Property: Balanced and Complete
+    Min Binary Heap - O(log n)
+    Property: Balanced and Complete Binary Tree
+    Useful for min/max removes. Also know as priority queue. Can be used for heapsort.
     """
     def __init__(self):
         self.heapList = [0]
