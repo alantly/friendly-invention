@@ -43,10 +43,9 @@ class Stack(object):
     def pop(self):
         if self.head is None:
             return None
-        poppedData = self.head
+        poppedNode = self.head
         self.head = self.head.next
-        return poppedData.data
-
+        return poppedNode.data
 
 ##############################
 import unittest
@@ -63,6 +62,12 @@ class TestLinkLists(unittest.TestCase):
     def test_size(self):
         self.assertEqual(4, self.stack.size())
 
+    def test_peek_1(self):
+        self.assertEqual(None, Stack().peek())
+
+    def test_peek_2(self):
+        self.assertEqual("4", self.stack.peek())
+
     def test_push_1(self):
         self.assertEqual("4321", self.stack.printData())
         self.stack.push("9")
@@ -72,12 +77,6 @@ class TestLinkLists(unittest.TestCase):
         self.assertEqual("4321", self.stack.printData())
         self.stack.push(None)
         self.assertEqual("4321", self.stack.printData())
-
-    def test_peek_1(self):
-        self.assertEqual(None, Stack().peek())
-
-    def test_peek_2(self):
-        self.assertEqual("4", self.stack.peek())
 
     def test_pop_1(self):
         self.assertEqual("4321", self.stack.printData())
@@ -92,6 +91,13 @@ class TestLinkLists(unittest.TestCase):
         self.assertEqual("1", self.stack.pop())
         self.assertEqual(None, self.stack.pop())
         self.assertEqual("", self.stack.printData())
+
+    def test_push_pop(self):
+        stack = Stack()
+        stack.push("1")
+        self.assertEqual("1", stack.pop())
+        stack.push("6").push("2")
+        self.assertEqual("26", stack.printData())
 
 if __name__ == '__main__':
     unittest.main()
