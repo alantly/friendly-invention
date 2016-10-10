@@ -97,7 +97,7 @@ class Heap(object):
 ##############################
 import unittest
 
-class TestLinkLists(unittest.TestCase):
+class Test(unittest.TestCase):
 
     def setUp(self):
         self.heap = Heap()

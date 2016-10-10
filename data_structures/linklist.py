@@ -89,7 +89,7 @@ class LinkList(object):
 ##############################
 import unittest
 
-class TestLinkLists(unittest.TestCase):
+class Test(unittest.TestCase):
 
     def setUp(self):
         self.linklist = LinkList()

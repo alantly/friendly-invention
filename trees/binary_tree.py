@@ -1,4 +1,3 @@
-
 from Queue import Queue
 
 class Node(object):
@@ -69,7 +68,7 @@ def dfs_postorder(root):
 ##############################
 import unittest
 
-class TestLinkLists(unittest.TestCase):
+class Test(unittest.TestCase):
 
     def setUp(self):
         """

@@ -47,7 +47,7 @@ class Queue(object):
 ##############################
 import unittest
 
-class TestLinkLists(unittest.TestCase):
+class Test(unittest.TestCase):
 
     def setUp(self):
         self.queue = Queue()

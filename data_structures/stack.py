@@ -43,7 +43,7 @@ class Stack(object):
 ##############################
 import unittest
 
-class TestLinkLists(unittest.TestCase):
+class Test(unittest.TestCase):
 
     def setUp(self):
         self.stack = Stack()

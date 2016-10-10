@@ -1,6 +1,5 @@
 Tools
 Binary Search Tree - good for storing numbered values in order - O(log n)
-Hash Table/Hash Set - good for constant access and unique values - O(1)
 
 5 Algorithm Approaches
 Examplify - build small examples to see problem
@@ -11,7 +10,6 @@ Data Structure Brainstorm - run through a list of data structures for best fits
 
 Algorithms
 For lists of values
-  Binary Search - O(log n)
   Quick Sort - O(n log n)
   Merge Sort - O(n log n)
 For Graphs
