@@ -12,12 +12,27 @@ def height(root):
     return 1 + max(height(root.left), height(root.right))
 
 def balanced(root):
+    """
+    Depth between leaf nodes is at most a difference of 1
+    """
     if root is None:
         return True
     if abs(height(root.left) - height(root.right)) > 1:
         return False
     else:
         return balanced(root.left) and balanced(root.right)
+
+def complete(root):
+    """
+    All children at the kth or k-1th level
+    """
+    pass
+
+def full(root):
+    """
+    Every node has k children
+    """
+    pass
 
 def bfs(root):
     """

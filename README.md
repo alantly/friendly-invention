@@ -1,6 +1,3 @@
-Tools
-Binary Search Tree - good for storing numbered values in order - O(log n)
-
 5 Algorithm Approaches
 Examplify - build small examples to see problem
 Pattern Matching - find similar problems and alter solution
@@ -17,7 +14,6 @@ For Graphs
   BFS  - Iterative O(|V| + |E|)
 
 Binary Tree
--Full (every node has k children) and Complete (all children at the kth or k-1th level). Both is rare with (2^n) -1 nodes
 -red-black
 -avl
 
