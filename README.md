@@ -95,9 +95,6 @@ int partition(int arr[], int left, int right) {
   return left;
 }
 
-Concepts
-Bit Manipulation
-- << shifts/mul by 2, >> div by 2, ^ XOR, & and, ~negate, | or
 
 OOP
 -ask questions, who what when where why and how?

@@ -1,3 +1,14 @@
+"""
+Bit Manipulation
+<< shifts/mul by 2
+>> div by 2
+^ XOR
+& and
+| or
+~ negate
+- Two's complement
+"""
+
 def odd_or_even(x):
     return (x & 1) == 0
 
