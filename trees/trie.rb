@@ -1,59 +1,59 @@
 class TrieNode
-    attr_accessor :characters, :end_of_word
-    def initialize()
-        @characters = {}
-        @end_of_word = false
-    end
+  attr_accessor :characters, :end_of_word
+  def initialize()
+    @characters = {}
+    @end_of_word = false
+  end
 end
 
 class Trie
-    def initialize()
-        @head = TrieNode.new
+  def initialize()
+    @head = TrieNode.new
+  end
+
+  def insert(word)
+    _insert(@head, word)
+  end
+
+  def _insert(node, word)
+    return if word.length == 0
+
+    first_char = word[0]
+    remaining_chars = word[1..]
+
+    node.characters[first_char] = TrieNode.new unless node.characters[first_char]
+    if remaining_chars.length > 0
+      _insert(node.characters[first_char], remaining_chars)
+    else
+      node.characters[first_char].end_of_word = true
     end
+  end
 
-    def insert(word)
-        _insert(@head, word)
+  def search(word)
+    _search(node: @head, word: word, prefix_only: false)
+  end
+
+  def _search(node:, word:, prefix_only: false)
+    return false if word.length == 0
+
+    first_char = word[0]
+    remaining_chars = word[1..]
+
+    if node.characters[first_char]
+      if remaining_chars.length == 0
+        return true if prefix_only
+        return node.characters[first_char].end_of_word
+      else
+        return _search(node: node.characters[first_char], word: remaining_chars, prefix_only: prefix_only)
+      end
+    else
+      return false
     end
+  end
 
-    def _insert(node, word)
-        return if word.length == 0
-
-        first_char = word[0]
-        remaining_chars = word[1..]
-
-        node.characters[first_char] = TrieNode.new unless node.characters[first_char]
-        if remaining_chars.length > 0
-            _insert(node.characters[first_char], remaining_chars)
-        else
-            node.characters[first_char].end_of_word = true
-        end
-    end
-
-    def search(word)
-        _search(node: @head, word: word, prefix_only: false)
-    end
-
-    def _search(node:, word:, prefix_only: false)
-        return false if word.length == 0
-
-        first_char = word[0]
-        remaining_chars = word[1..]
-
-        if node.characters[first_char]
-            if remaining_chars.length == 0
-                return true if prefix_only
-                return node.characters[first_char].end_of_word
-            else
-                return _search(node: node.characters[first_char], word: remaining_chars, prefix_only: prefix_only)
-            end
-        else
-            return false
-        end
-    end
-
-    def starts_with(prefix)
-        _search(node: @head, word: prefix, prefix_only: true)
-    end
+  def starts_with(prefix)
+    _search(node: @head, word: prefix, prefix_only: true)
+  end
 end
 
 require 'minitest/autorun'
